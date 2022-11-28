@@ -28,9 +28,10 @@ int main() {
             }
             k++;
         }
-        if (flag==1) {
+        if (flag) {
             if (array[j] > x) {
                 max = array[j];
+                break;
             }
         }
         

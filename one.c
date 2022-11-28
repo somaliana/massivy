@@ -18,8 +18,8 @@ int main() {
             array[i] = array[i]*(-1);
 
         }
-        else {
-            array[i] = array[i]*2;
+        if (array[i]%2!=0) {
+            array[i] *= 2;
         }
 
     }
