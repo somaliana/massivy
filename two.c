@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <math.h>
-
+#include <malloc.h>
 
 int main() {
-    int n;
+    int *a;
+    int i,n;
     double x;
-    scanf("%d %lf", &n,&x);
-    int array[n];
-    int i = 0;
-    while (i < n) {
-        int element;
-        scanf("%d", &element);
-        array[i] = element;
-        i++;
+    printf("Enter the quantity of array elements: "); 
+    scanf("%d %lf", &n,&x); 
+    a = (int*)malloc(n*sizeof(int)); 
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
     }
     int max = 0;
 
@@ -21,7 +20,7 @@ int main() {
 
         int k = 2;
         while (k<n) {
-            if (array[j]%k==0) {
+            if (a[j]%k==0) {
                 flag = 0;
                 break;
 
@@ -29,8 +28,8 @@ int main() {
             k++;
         }
         if (flag) {
-            if (array[j] > x) {
-                max = array[j];
+            if (a[j] > x) {
+                max = a[j];
                 break;
             }
         }

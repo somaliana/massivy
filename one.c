@@ -1,30 +1,29 @@
 #include <stdio.h>
 #include <math.h>
-
+#include <malloc.h>
 
 int main() {
-    int n;
-    scanf("%d", &n);
-    int array[n];
-    int i = 0;
-    while (i < n) {
-        int element;
-        scanf("%d", &element);
-        array[i] = element;
-        i++;
+    int *a;
+    int i,n;
+    printf("Enter the quantity of array elements: "); 
+    scanf("%d", &n); 
+    a = (int*)malloc(n*sizeof(int)); 
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
     }
     for (int i = 0; i<n; i++) {
         if (i%2==0) {
-            array[i] = array[i]*(-1);
+            a[i] = a[i]*(-1);
 
         }
-        if (array[i]%2!=0) {
-            array[i] *= 2;
+        if (a[i]%2!=0) {
+            a[i] *= 2;
         }
 
     }
     for (int i = 0; i < n; i++) {
-        printf("%d \n", array[i]);
+        printf("%d \n", a[i]);
     }
 
 
