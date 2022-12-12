@@ -29,12 +29,14 @@ int main() {
     for (int i=0;i<n-1;i++) {
         if (a[i]==maxNechet) {
             printf("firstHalf %d", a[i]);
+            free(a);
             return 0;
         }
     }
     for (int i=n; i <2*n-1;i++) {
         if (a[i]==maxNechet) {
             printf("secondHalf %d", a[i]);
+            free(a);
             return 0;
         }
     }

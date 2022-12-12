@@ -20,7 +20,9 @@ int main() {
         j++;
         if (j==n){
             printf("break");
+            free(a);
             return 0;
         }
     }
+    free(a);
 }
